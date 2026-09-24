@@ -9,14 +9,14 @@ function verificarResposta(correta) {
         resultado.className = "resultado correto";
 
         resultado.innerHTML =
-            "✅ Muito bem! A inteligência humana é construída por meio de experiências, emoções, aprendizagem e criatividade.";
+            "⚡ RESPOSTA CORRETA! Você identificou a diferença entre a inteligência humana e a inteligência artificial.";
 
     } else {
 
         resultado.className = "resultado incorreto";
 
         resultado.innerHTML =
-            "❌ Tente novamente! Pense nas diferenças entre experiências humanas e o processamento de dados pela IA.";
+            "💀 RESPOSTA INCORRETA! Reflita novamente sobre experiências, emoções, criatividade e processamento de dados.";
 
     }
 }

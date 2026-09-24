@@ -1,6 +1,9 @@
-/* =========================
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+
+/* ========================================
    CONFIGURAÇÕES GERAIS
-========================= */
+======================================== */
 
 * {
     margin: 0;
@@ -8,280 +11,889 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f7fb;
-    color: #202938;
-    line-height: 1.6;
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, #261044 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, #310d25 0%, transparent 30%),
+        #08080d;
+
+    color: #eeeeee;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   FUNDO
+======================================== */
+
+.energia {
+    position: fixed;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.12;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.energia-1 {
+    background: #6d28d9;
+
+    top: 20%;
+    left: -150px;
+}
+
+.energia-2 {
+    background: #dc2626;
+
+    bottom: 10%;
+    right: -150px;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
 
 .container {
     width: 90%;
     max-width: 1100px;
+
     margin: auto;
 }
 
 
-/* =========================
+/* ========================================
    CABEÇALHO
-========================= */
+======================================== */
 
 .cabecalho {
-    background: linear-gradient(135deg, #4f46e5, #7c3aed);
-    color: white;
-    padding: 60px 20px;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(5, 5, 10, 0.7),
+            rgba(5, 5, 10, 0.95)
+        );
+
+    border-bottom: 2px solid #7c3aed;
 }
+
+
+/* linhas decorativas */
+
+.cabecalho::before,
+.cabecalho::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border: 2px solid #7c3aed;
+
+    transform: rotate(45deg);
+
+    opacity: 0.3;
+}
+
+.cabecalho::before {
+    left: -100px;
+    top: 20%;
+}
+
+.cabecalho::after {
+    right: -100px;
+    bottom: 20%;
+}
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.subtitulo {
+
+    color: #a78bfa;
+
+    letter-spacing: 6px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
 
 .cabecalho h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+
+    font-family: 'Black Ops One', sans-serif;
+
+    font-size: clamp(50px, 9vw, 110px);
+
+    line-height: 0.9;
+
+    letter-spacing: 4px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px #7c3aed,
+        0 0 30px #7c3aed;
+
+    margin-bottom: 30px;
 }
 
-.cabecalho p {
-    font-size: 18px;
-    opacity: 0.95;
+
+.cabecalho h1 span {
+
+    display: block;
+
+    color: #8b5cf6;
+
+    text-shadow:
+        0 0 10px #8b5cf6,
+        0 0 40px #6d28d9;
 }
 
 
-/* =========================
+.descricao-header {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 20px;
+
+    color: #c4c4c4;
+}
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+.botao {
+
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 15px 35px;
+
+    color: white;
+
+    background: #5b21b6;
+
+    border: 1px solid #a78bfa;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+
+.botao:hover {
+
+    background: #7c3aed;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 30px rgba(139, 92, 246, 0.8);
+}
+
+
+/* ========================================
    SEÇÕES
-========================= */
+======================================== */
 
-section {
-    background: white;
-    margin: 35px 0;
-    padding: 35px;
-    border-radius: 18px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+.secao {
+
+    position: relative;
+
+    margin: 70px 0;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25, 20, 35, 0.95),
+            rgba(10, 10, 15, 0.95)
+        );
+
+    border: 1px solid #312e41;
+
+    border-left: 4px solid #7c3aed;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.4);
+
+    overflow: hidden;
 }
 
-section h2 {
-    color: #4f46e5;
-    margin-bottom: 18px;
-    font-size: 28px;
+
+.secao::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100px;
+    height: 100px;
+
+    border-top: 2px solid #dc2626;
+    border-right: 2px solid #dc2626;
+
+    opacity: 0.5;
 }
 
-section p {
+
+.numero {
+
+    font-family: 'Black Ops One';
+
+    color: #dc2626;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 5px;
+}
+
+
+.secao h2 {
+
+    font-family: 'Black Ops One';
+
+    color: #a78bfa;
+
+    font-size: 32px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+
+.secao p {
+
+    color: #c9c9d0;
+
+    font-size: 18px;
+
     margin-bottom: 15px;
 }
 
 
-/* =========================
+/* ========================================
    CARDS
-========================= */
+======================================== */
 
 .cards {
+
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    margin-top: 25px;
+
+    gap: 30px;
+
+    margin-top: 35px;
 }
+
 
 .card {
-    padding: 30px;
-    border-radius: 15px;
-    transition: transform 0.3s ease;
+
+    padding: 35px;
+
+    background: #0e0d14;
+
+    border: 1px solid #272333;
+
+    position: relative;
+
+    transition: 0.4s;
 }
+
 
 .card:hover {
-    transform: translateY(-5px);
+
+    transform: translateY(-8px);
+
+    border-color: #7c3aed;
+
+    box-shadow:
+        0 0 30px rgba(124, 58, 237, 0.2);
 }
+
+
+.card::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background: #7c3aed;
+}
+
+
+.card.humano::after {
+    background: #2563eb;
+}
+
+
+.card.inteligencia::after {
+    background: #7c3aed;
+}
+
+
+.simbolo {
+
+    font-size: 60px;
+
+    margin-bottom: 10px;
+
+    filter:
+        drop-shadow(0 0 15px rgba(139, 92, 246, 0.5));
+}
+
+
+.categoria {
+
+    color: #ef4444 !important;
+
+    font-size: 13px !important;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+}
+
 
 .card h3 {
-    margin: 10px 0;
-    font-size: 23px;
-}
 
-.card p {
-    font-size: 16px;
-}
+    font-family: 'Black Ops One';
 
-.humano {
-    background: #eef2ff;
-    border-left: 6px solid #4f46e5;
-}
-
-.ia {
-    background: #f3e8ff;
-    border-left: 6px solid #9333ea;
-}
-
-.icone {
-    font-size: 45px;
-}
-
-
-/* =========================
-   IMAGEM / REPRESENTAÇÃO
-========================= */
-
-.imagem-placeholder {
-    min-height: 280px;
-    background: linear-gradient(135deg, #eef2ff, #faf5ff);
-    border-radius: 15px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 45px;
-
-    padding: 30px;
-}
-
-.visual {
-    width: 280px;
-    min-height: 180px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    border-radius: 15px;
-    padding: 20px;
-}
-
-.visual span {
-    font-size: 55px;
-}
-
-.visual strong {
-    font-size: 22px;
-    margin-top: 5px;
-}
-
-.visual small {
-    margin-top: 8px;
-}
-
-.humano-visual {
-    background: #dbeafe;
-}
-
-.ia-visual {
-    background: #ede9fe;
-}
-
-.versus {
-    font-weight: bold;
     font-size: 24px;
-    color: #4f46e5;
-}
 
-.acessibilidade {
-    margin-top: 20px;
-    padding: 20px;
-    background: #f8fafc;
-    border-left: 5px solid #10b981;
-    border-radius: 10px;
-}
+    color: white;
 
-.acessibilidade h3 {
-    color: #047857;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 
-/* =========================
-   ATIVIDADE
-========================= */
+.linha {
 
-.atividade {
-    text-align: center;
+    height: 2px;
+
+    width: 60px;
+
+    background: #7c3aed;
+
+    margin-bottom: 20px;
 }
 
-.opcoes {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+
+.card ul {
+
+    list-style: none;
+
     margin-top: 25px;
 }
 
-.opcoes button {
-    border: none;
-    background: #4f46e5;
-    color: white;
 
-    padding: 16px;
-    border-radius: 10px;
+.card li {
 
-    font-size: 16px;
-    cursor: pointer;
+    padding: 8px 0;
+
+    border-bottom: 1px solid #25212e;
+
+    color: #ddd;
+}
+
+
+/* ========================================
+   REPRESENTAÇÃO
+======================================== */
+
+.imagem-placeholder {
+
+    min-height: 300px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 40px;
+
+    background:
+        radial-gradient(
+            circle,
+            #251044,
+            #09090e
+        );
+
+    border: 1px solid #312e41;
+}
+
+
+.personagem {
+
+    width: 280px;
+
+    min-height: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background: rgba(10, 10, 15, 0.8);
+
+    border: 1px solid #4c1d95;
 
     transition: 0.3s;
 }
 
-.opcoes button:hover {
-    background: #3730a3;
-    transform: scale(1.01);
+
+.personagem:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 30px rgba(124, 58, 237, 0.5);
 }
+
+
+.personagem span {
+
+    font-size: 60px;
+
+    margin-bottom: 10px;
+}
+
+
+.personagem strong {
+
+    font-family: 'Black Ops One';
+
+    font-size: 22px;
+
+    color: #fff;
+}
+
+
+.personagem small {
+
+    color: #aaa;
+
+    margin-top: 8px;
+}
+
+
+.humano-visual {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        inset 0 0 30px rgba(37, 99, 235, 0.1);
+}
+
+
+.ia-visual {
+
+    border-color: #7c3aed;
+
+    box-shadow:
+        inset 0 0 30px rgba(124, 58, 237, 0.15);
+}
+
+
+.versus {
+
+    text-align: center;
+
+    color: #ef4444;
+
+    font-family: 'Black Ops One';
+
+    font-size: 28px;
+}
+
+
+.energia-icon {
+
+    width: 50px;
+    height: 50px;
+
+    margin: 10px auto;
+
+    background: #7c3aed;
+
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        100% 35%,
+        68% 57%,
+        79% 100%,
+        50% 72%,
+        21% 100%,
+        32% 57%,
+        0% 35%,
+        39% 35%
+    );
+
+    filter:
+        drop-shadow(0 0 15px #8b5cf6);
+
+    animation: energia 1.5s infinite alternate;
+}
+
+
+@keyframes energia {
+
+    from {
+        transform: scale(0.8) rotate(0deg);
+    }
+
+    to {
+        transform: scale(1.2) rotate(10deg);
+    }
+}
+
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+.acessibilidade {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #111019;
+
+    border-left: 4px solid #10b981;
+}
+
+
+.acessibilidade h3 {
+
+    color: #34d399;
+
+    margin-bottom: 10px;
+
+    font-size: 18px;
+}
+
+
+/* ========================================
+   QUIZ
+======================================== */
+
+.atividade {
+
+    text-align: center;
+
+    border-color: #dc2626;
+}
+
+
+.atividade h2 {
+
+    color: #ef4444;
+
+    text-shadow:
+        0 0 15px rgba(239, 68, 68, 0.4);
+}
+
+
+.instrucao {
+
+    margin-bottom: 30px;
+}
+
+
+.dominio {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    background: #09090e;
+
+    border: 1px solid #3f3f46;
+}
+
+
+.pergunta {
+
+    color: white !important;
+
+    font-size: 22px !important;
+
+    font-weight: 600;
+}
+
+
+.opcoes {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.opcoes button {
+
+    padding: 18px;
+
+    background: #17131f;
+
+    border: 1px solid #4c1d95;
+
+    color: #ddd;
+
+    font-family: 'Rajdhani';
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    text-align: left;
+}
+
+
+.opcoes button:hover {
+
+    background: #4c1d95;
+
+    border-color: #a78bfa;
+
+    color: white;
+
+    transform: translateX(5px);
+
+    box-shadow:
+        0 0 20px rgba(124, 58, 237, 0.3);
+}
+
+
+/* ========================================
+   RESULTADO
+======================================== */
 
 .resultado {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 10px;
 
-    font-weight: bold;
+    margin-top: 25px;
+
+    padding: 18px;
+
     display: none;
+
+    font-weight: 700;
+
+    font-size: 18px;
 }
+
 
 .correto {
+
     display: block;
-    background: #dcfce7;
-    color: #166534;
+
+    background: rgba(16, 185, 129, 0.1);
+
+    border: 1px solid #10b981;
+
+    color: #6ee7b7;
 }
+
 
 .incorreto {
+
     display: block;
-    background: #fee2e2;
-    color: #991b1b;
+
+    background: rgba(220, 38, 38, 0.1);
+
+    border: 1px solid #dc2626;
+
+    color: #fca5a5;
 }
 
 
-/* =========================
-   RODAPÉ
-========================= */
+/* ========================================
+   FOOTER
+======================================== */
 
 footer {
-    background: #111827;
-    color: white;
+
+    padding: 50px 20px;
+
     text-align: center;
-    padding: 25px;
-    margin-top: 50px;
+
+    background: #050507;
+
+    border-top: 1px solid #312e41;
 }
 
 
-/* =========================
+.selo {
+
+    font-size: 40px;
+
+    color: #7c3aed;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 20px #7c3aed;
+}
+
+
+footer p {
+
+    font-family: 'Black Ops One';
+
+    letter-spacing: 3px;
+
+    color: #a78bfa;
+
+    margin-bottom: 8px;
+}
+
+
+footer small {
+
+    color: #666;
+}
+
+
+/* ========================================
    RESPONSIVIDADE
-========================= */
+======================================== */
 
 @media (max-width: 768px) {
 
     .cabecalho h1 {
-        font-size: 32px;
+        font-size: 55px;
     }
+
 
     .cards {
+
         grid-template-columns: 1fr;
+
     }
+
 
     .imagem-placeholder {
+
         flex-direction: column;
-        gap: 20px;
+
+        gap: 25px;
+
     }
 
-    .visual {
+
+    .personagem {
+
         width: 100%;
+
     }
+
 
     .versus {
-        font-size: 20px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
     }
 
-    section {
-        padding: 25px 20px;
+
+    .secao {
+
+        padding: 30px 20px;
+
     }
+
+
+    .secao h2 {
+
+        font-size: 25px;
+
+    }
+
 }
